@@ -11,9 +11,8 @@ namespace ServiceLayer.Controllers
     {
         private BusinessPerson _businessPerson = new();
         private readonly SoPerson _so = new();
-         
-        [HttpGet]
-        [Route("[action]")]
+
+        [HttpGet("getById/{id}")]
         public ActionResult<SoPerson> getById(Guid id)
         {
             _so.dto = new SoPerson.Response();
@@ -21,8 +20,7 @@ namespace ServiceLayer.Controllers
             return _so;
         }
 
-        [HttpGet]
-        [Route("[action]")]
+        [HttpGet("getByDni/{dni}")]
         public ActionResult<SoPerson> getByDni(string dni)
         {
             _so.dto = new SoPerson.Response();

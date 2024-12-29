@@ -12,7 +12,7 @@ namespace DataAccessLayer.Connection
         {
             try
             {
-                string connectionString = "Server=localhost;Port=3306;Database=dbds2242;User=root;Password=@prkal34;";
+                string connectionString = "Server=localhost;Port=3306;Database=dbds20242;User=root;Password=1512;";
                 ServerVersion serverVersion = new MySqlServerVersion(new Version(11, 5, 2));
                 optionsBuilder.UseMySql(connectionString,serverVersion);
             }
