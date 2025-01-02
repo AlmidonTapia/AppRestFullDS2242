@@ -17,7 +17,7 @@ namespace DataAccessLayer.Query
             return dbc.SaveChanges();
         }
 
-        public List<PersonDto> getAll()
+        public List<PersonDto> getall()
         {
             using DataBaseContext dbc = new();
             return InitAutoMapper.mapper.Map<List<PersonDto>>(dbc.Persons.ToList());

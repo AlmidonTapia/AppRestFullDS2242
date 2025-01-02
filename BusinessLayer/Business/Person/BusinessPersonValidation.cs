@@ -6,10 +6,21 @@ namespace BusinessLayer.Business.Person
     {
         private void insertValidation(PersonDto personDto)
         {
-            if(repoPerson.getByDni(personDto.dni) is not null)
+               if (string.IsNullOrWhiteSpace(personDto.dni))
             {
-                _message.AddMessage("El dni ya existe");
+                _message.AddMessage("El DNI no puede ser nulo o vacío");
             }
+
+            if (string.IsNullOrWhiteSpace(personDto.firstName))
+            {
+                _message.AddMessage("El nombre no puede ser nulo o vacío");
+            }
+
+            if (string.IsNullOrWhiteSpace(personDto.surName))
+            {
+                _message.AddMessage("El apellido no puede ser nulo o vacío");
+            }
+            
         }
         private void updateValidation(PersonDto personDto) 
         {

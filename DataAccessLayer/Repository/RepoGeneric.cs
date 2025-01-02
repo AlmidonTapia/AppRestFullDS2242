@@ -6,6 +6,6 @@
         public int update(Dto dto);
         public int delete(Guid id);
         public Dto getById(Guid id);
-        public List<Dto> getAll();
+        public List<Dto> getall();
     }
 }

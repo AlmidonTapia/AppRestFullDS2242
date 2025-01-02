@@ -31,9 +31,9 @@ namespace BusinessLayer.Business.Person
             return (_message, personDto);
         }
 
-        public (MessageDto, List<PersonDto>) getAll()
+        public (MessageDto, List<PersonDto>) getall()
         {
-            List<PersonDto>? personDto = repoPerson.getAll();
+            List<PersonDto>? personDto = repoPerson.getall();
             if (personDto != null)
             {
                 _message.Success();
@@ -48,7 +48,7 @@ namespace BusinessLayer.Business.Person
             using TransactionScope transactionScope = new();
             insertValidation(personDto);
             if(_message.ExistsMessage()){
-                _message.Conflict();
+                _message.Error();
                 return _message;
             }
 
@@ -101,7 +101,6 @@ namespace BusinessLayer.Business.Person
             _message.AddMessage("No se encontre la persona");
             return _message;
         }
-
 
     }
 }

@@ -37,7 +37,7 @@
 
         public void Conflict()
         {
-            type = "conflict";
+            type = "warning"; //se cambia a warning por ahora conflict
         }
 
         public void Exception()

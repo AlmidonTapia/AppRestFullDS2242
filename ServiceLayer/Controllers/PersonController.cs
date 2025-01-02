@@ -56,10 +56,10 @@ namespace ServiceLayer.Controllers
 
         [HttpGet]
         [Route("[action]")]
-        public ActionResult<SoPerson> getAll()
+        public ActionResult<SoPerson> getall()
         {
             _so.dto = new SoPerson.Response();
-            (_so.mo, _so.dto.listPerson) = _businessPerson.getAll();
+            (_so.mo, _so.dto.listPerson) = _businessPerson.getall();
             return _so;
         }
 
